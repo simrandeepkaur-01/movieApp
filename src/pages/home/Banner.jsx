@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Banner = () => {
   const { movies } = useApi('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1');
-  console.log(movies);
+
   const settings = {
     dots: true,
     infinite: true,

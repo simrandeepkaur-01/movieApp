@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 export default function PopularMovies({ className }) {
   const { movies } = useApi('https://api.themoviedb.org/3/trending/movie/day?language=en-US');
-  const { genres } = useApi('https://api.themoviedb.org/3/genre/movie/list?language=en');
 
   return (
     <section className='text-white w-10/12 mx-auto space-y-4'>
@@ -39,8 +38,7 @@ export default function PopularMovies({ className }) {
             </Link>
           </li>
 
-        ))
-        }
+        ))}
       </ul >
     </section>
   )

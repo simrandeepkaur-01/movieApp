@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
  
 export default function PopularMovies({ className }) {
   const { movies } = useApi('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1');
-  const { genres } = useApi('https://api.themoviedb.org/3/genre/movie/list?language=en');
 
   return (
     <ul className={`${className}`}>

@@ -7,8 +7,6 @@ export default function Details() {
   const { movies } = useApi(`https://api.themoviedb.org/3/movie/${id}?language=en-US`);
   const { genres } = useApi('https://api.themoviedb.org/3/genre/movie/list?language=en');
 
-  console.log(movies);
-
   const movie = movies;
   return (
     <div className='min-h-screen'>

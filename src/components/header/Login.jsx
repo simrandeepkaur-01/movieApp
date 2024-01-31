@@ -1,6 +1,6 @@
 export default function Login() {
     const authId = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMDE0YmQzZTA3MGNlN2RlNDJjYzA0Zjg0MmNkNDkwOCIsInN1YiI6IjY1YjFmM2VhNzg1NzBlMDBjOTY3NmIxZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.5MLHIDJthYsEjNI0Ey6chlzw6IqeUf6jzAYVewKvcqA';
-    
+
     async function generateToken() {
         const options = {
             method: 'GET',
@@ -18,18 +18,17 @@ export default function Login() {
                 handleLogin(requestToken);
             }
         } catch (error) {
-            console.log('error creating token');
+            console.log(error.message);
         }
     }
 
     function handleLogin(requestToken) {
         try {
             const token = requestToken;
-            console.log(requestToken);
             window.location.href = `https://www.themoviedb.org/authenticate/${token}?redirect_to=http://localhost:5173/approved`;
         }
         catch (error) {
-            console.log('error while handling login');
+            console.log(error.message);
         }
     };
 
@@ -37,7 +36,6 @@ export default function Login() {
         try {
             const searchParams = new URLSearchParams(window.location.search);
             const requestToken = searchParams.get('request_token');
-            console.log('requestToken  ' + requestToken);
 
             const options = {
                 method: 'POST',
@@ -52,10 +50,9 @@ export default function Login() {
             const response = await fetch('https://api.themoviedb.org/3/authentication/session/new', options);
             if (response.ok) {
                 const result = await response.json();
-                console.log('session id is..' + result.session_id);
             }
         } catch (error) {
-            console.log('error while generating session id.');
+            console.log(error.message);
         }
     }
     generateSessionId();

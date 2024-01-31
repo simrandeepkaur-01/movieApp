@@ -26,7 +26,7 @@ export default function useApi(url) {
                     setBackdrops(result);
                 }
             } catch (error) {
-                console.log('error in api');
+                console.log(error.message);
             }
         }
 

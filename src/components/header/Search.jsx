@@ -24,7 +24,7 @@ export default function Search() {
 
   return (
     <>
-      <input type="search" onChange={handleInput} value={input} placeholder='Search Movies...' className='relative bg-gray-700 rounded-lg px-2 py-1 md:w-96'/>
+      <input type="search" onChange={handleInput} value={input} placeholder='Search Movies...' className='relative bg-gray-700 rounded-lg px-2 py-1 md:w-96' />
       <ul className='absolute w-11/12 top-16 left-1/2 -translate-x-1/2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 place-items-center rounded-xl overflow-y-auto max-h-screen gap-4 bg-white'>
         {movies.results && movies.results.map((movie) => (
 
