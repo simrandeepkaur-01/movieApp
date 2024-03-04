@@ -28,7 +28,7 @@ export default function Details() {
 
                 <div className='space-x-2 italic'>
                   {genres.genres && (
-                    movie.genres.map((genre_id) => {
+                    movie.genres?.map((genre_id) => {
                       const genre = genres.genres.find((g) => g.id === genre_id.id);
                       return genre && <span>{genre.name}.</span>;
                     })
